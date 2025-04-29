@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Categorías -->
+    <string-array name="categorias_array">
+        <item>Problemas en baños</item>
+        <item>Problemas eléctricos</item>
+        <item>Otros</item>
+    </string-array>
+
+    <!-- Subcategorías -->
+    <string-array name="subcategorias_banos_array">
+        <item>Fuga de agua</item>
+        <item>Inodoro dañado</item>
+        <item>No hay agua</item>
+    </string-array>
+
+    <string-array name="subcategorias_electricos_array">
+        <item>Falla de luz</item>
+        <item>Interruptor dañado</item>
+        <item>Cable expuesto</item>
+    </string-array>
+
+    <string-array name="prioridad_array">
+        <item>Incidencia</item>
+        <item>Urgente</item>
+        <item>Emergencia</item>
+    </string-array>
+</resources>
