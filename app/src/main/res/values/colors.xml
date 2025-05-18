@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- colores fragment Administrador-->
+    <color name="C1_Amarilo">#FDB930</color>
+    <color name="C2_Gris">#C2D0D9</color>
+    <color name="C3_Ocre">#67501C</color>
+    <color name="C4_Hueso">#F6F6F6</color>
+    <color name="gray">#454343</color>
+    <color name="verde">#00796B</color>
 </resources>
