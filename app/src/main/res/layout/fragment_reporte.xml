@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="25dp"
+    android:padding="20dp"
     android:background="#f6f6f6"
     android:fontFamily="sans-serif-black">
 
@@ -12,6 +12,41 @@
         android:layout_height="wrap_content"
         android:gravity="start"
         android:orientation="vertical">
+
+        <!-- Usuario-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Espaciador para empujar el siguiente ImageView a la derecha -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/account_2"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginHorizontal="8dp"/>
 
         <!-- Título-->
         <TextView
@@ -23,8 +58,8 @@
             android:fontFamily="sans-serif-black"
             android:text="Hacer un reporte"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textColor="@color/C3_Ocre"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,16 +76,13 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <TextView
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Usuario:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:src="@drawable/ic_user"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tvNombreUsuario"
@@ -70,16 +102,12 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Correo:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:src="@drawable/ic_email"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tvCorreoUsuario"
@@ -99,16 +127,13 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-            <TextView
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Teléfono:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:src="@drawable/ic_call"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tvTelefonoUsuario"
@@ -136,7 +161,6 @@
                 android:fontFamily="sans-serif-black"
                 android:padding="8dp"
                 android:text="Categoría:"
-                android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -159,12 +183,12 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:layout_width="24dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginEnd="12dp"
                     android:src="@drawable/down"
-                    app:tint="#03A9F4" />
+                    />
 
             </FrameLayout>
 
@@ -186,7 +210,6 @@
                 android:fontFamily="sans-serif-black"
                 android:padding="8dp"
                 android:text="Problema:"
-                android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -215,7 +238,7 @@
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginEnd="12dp"
                     android:src="@drawable/down"
-                    app:tint="#03A9F4" />
+                  />
 
             </FrameLayout>
         </LinearLayout>
@@ -231,7 +254,6 @@
             android:gravity="start"
             android:padding="8dp"
             android:text="Descripción:"
-            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -247,9 +269,9 @@
             android:inputType="textMultiLine"
             android:minLines="3"
             android:textColor="#494949"
-            android:textColorHint="#dd99d6"
+            android:textColorHint="@color/C3_Ocre"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            />
 
 
         <!-- Ubicación -->
@@ -257,9 +279,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
+            android:layout_marginTop="10dp"
             android:padding="8dp"
             android:text="Ubicación:"
-            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -273,14 +295,14 @@
             android:hint="Ej: Edificio C, piso 2"
             android:padding="12dp"
             android:textColor="#494949"
-            android:textColorHint="#dd99d6"
+            android:textColorHint="@color/C3_Ocre"
             android:textSize="18dp"
-            android:textStyle="bold" />
+          />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -289,7 +311,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:text="Prioridad: "
-                android:textAllCaps="true"
+
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -314,8 +336,7 @@
                     android:layout_height="24dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginEnd="12dp"
-                    android:src="@drawable/down"
-                    app:tint="#03A9F4" />
+                    android:src="@drawable/down"/>
 
             </FrameLayout>
 
@@ -323,20 +344,21 @@
 
 
         <!-- Descripción de la prioridad -->
+
+        <!-- Subir imagen -->
         <TextView
             android:id="@+id/tvDescripcionPrioridad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/des_report_roundedlg_et"
             android:padding="10dp"
             android:text="Descripción de la prioridad"
             android:textColor="#494949"
-            android:textColorHint="#dd99d6"
+            android:textColorHint="@color/C3_Ocre"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            />
 
-        <!-- Subir imagen -->
         <androidx.cardview.widget.CardView
             android:layout_width="105dp"
             android:layout_height="105dp"
@@ -344,7 +366,7 @@
             app:cardElevation="4dp"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
-            app:cardBackgroundColor="#a32fff">
+            app:cardBackgroundColor="@color/white">
 
             <Button
                 android:id="@+id/btnSeleccionarImagen"
@@ -355,9 +377,9 @@
                 android:textStyle="bold"
                 android:padding="12dp"
                 android:text="Adjuntar Foto"
-                android:textColor="@color/white"
+                android:textColor="@color/C3_Ocre"
                 android:textSize="18dp"
-                android:background="@android:color/transparent"/>
+                android:background="?attr/selectableItemBackgroundBorderless"/>
         </androidx.cardview.widget.CardView>
 
 
@@ -367,12 +389,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginEnd="100dp"
             android:backgroundTint="#fcb932"
             android:padding="12dp"
-            android:text="Enviar Reporte"
+            android:text="Enviar"
             android:textColor="@android:color/black"
             android:textSize="20dp"
             android:textStyle="bold"
