@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="radius">
+        <item name="cornerSizeTopRight"> 20dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+    </style>
+
+    <!-- Estilo personalizado para el PopupMenu -->
+    <style name="CustomPopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <!-- Cambiar el color de fondo del PopupMenu -->
+        <item name="android:colorBackground">@color/popup_background_color</item>
+        <!-- Cambiar el color del texto de los elementos del menú -->
+        <item name="android:textColor">@color/popup_text_color</item>
+    </style>
+
+</resources>

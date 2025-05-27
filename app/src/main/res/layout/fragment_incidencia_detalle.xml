@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/C4_Hueso"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_dettalle_incidencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:titleTextColor="@color/C1_Amarilo"
+        android:elevation="5dp"
+        app:title="Detalle de Incidencia"
+        android:textStyle="bold"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <!-- Título Informacion general-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="12dp"
+            android:padding="3dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Información General"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/C3_Ocre" />
+        </LinearLayout>
+    <!-- cardview 1 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="25dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        android:padding="5dp"
+        app:cardElevation="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_margin="10dp">
+
+            <!-- Etiqueta 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Reportado por:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Nombre del Usuario -->
+                <TextView
+                    android:id="@+id/tvNombreUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Juan Pérez"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            <!-- Etiqueta 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendario"
+                    app:tint="@color/C3_Ocre"
+                    android:contentDescription="icono calendario"
+                    android:layout_marginEnd="3dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Fecha de reporte:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Fecha de Reporte -->
+                <TextView
+                    android:id="@+id/tvFechaReporte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10/05/2025"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            <!-- Etiqueta 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Estado:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Estado -->
+                <TextView
+                    android:id="@+id/tvEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pendiente"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/verde" />
+            </LinearLayout>
+            <!-- Botón Asignar -->
+            <!-- Estado y acciones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:paddingEnd="10dp">
+
+                <!-- Spinner de cambio de estado -->
+                <Spinner
+                    android:id="@+id/spinnerEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/C3_Ocre"
+                    android:popupBackground="@color/C4_Hueso"
+                    android:layout_marginEnd="10dp" />
+
+                <!-- Botón Cambiar Estado -->
+                <Button
+                    android:id="@+id/btnCambiarEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/C1_Amarilo"
+                    android:text="CAMBIAR ESTADO" />
+
+            </LinearLayout>
+
+            <!-- Botón Asignar aparte, si quieres abajo o en otro lugar -->
+            <Button
+                android:id="@+id/btnAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/C1_Amarilo"
+                android:text="ASIGNAR"
+                android:layout_marginTop="10dp" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <!-- Título Detalle del Problema-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="12dp"
+        android:padding="3dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_herramientas"
+            android:contentDescription="icono_herramientas"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detalle del Problema"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/C3_Ocre" />
+    </LinearLayout>
+    <!-- cardview 2 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="25dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        android:padding="5dp"
+        app:cardElevation="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_margin="10dp">
+            <!-- Etiqueta 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Categoria:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Categoría -->
+                <TextView
+                    android:id="@+id/tvCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Problemas en baños"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
+            <!-- Etiqueta 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Subcategoria:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Subcategoría -->
+                <TextView
+                    android:id="@+id/tvSubcategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuga de agua"
+                    android:textSize="16sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            <!-- Etiqueta 6 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Descripción de la incidencia:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Descripción de Incidencia -->
+                <TextView
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuga de agua ..."
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Etiqueta 7 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Enlace a medios:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Media URL -->
+                <TextView
+                    android:id="@+id/tvMediaUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No disponible"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Etiqueta 8 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location"
+                    app:tint="@color/C3_Ocre"
+                    android:contentDescription="icono ubicacion"
+                    android:layout_marginEnd="3dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Ubicación:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Ubicación -->
+                <TextView
+                    android:id="@+id/tvUbicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bloque A, Piso 3"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <!-- Título Prioridad-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="12dp"
+        android:padding="3dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_siren"
+            android:contentDescription="icono sirena"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridad"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/C3_Ocre" />
+    </LinearLayout>
+    <!-- cardview 3-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="25dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        android:padding="5dp"
+        app:cardElevation="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_margin="10dp">
+            <!-- Etiqueta 9 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Nivel:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Prioridad -->
+                <TextView
+                    android:id="@+id/tvPrioridad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Urgente"
+                    android:textSize="16sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            <!-- Etiqueta 10-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Descripción:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="5dp"/>
+                <!-- Descripción Prioridad -->
+                <TextView
+                    android:id="@+id/tvDescripcionPrioridad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atención Inmediata"
+                    android:textSize="16sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <!-- Título Asignacion-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="12dp"
+        android:padding="3dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tecnico"
+            android:contentDescription="icono tecnico"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asignación"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/C3_Ocre" />
+    </LinearLayout>
+
+
+            <!-- cardview 4 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="25dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                android:padding="5dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <!-- Supervisor: Fecha de Asignación -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="3dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_calendario"
+                            app:tint="@color/C3_Ocre"
+                            android:contentDescription="icono calendario"
+                            android:layout_marginEnd="3dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Fecha de Asignación:"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="5dp"/>
+                        <TextView
+                            android:id="@+id/tvFechaAsignacionSupervisor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin asignar"
+                            android:textSize="16sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <!-- Supervisor: Nombre -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="3dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Supervisor:"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="5dp"/>
+                        <TextView
+                            android:id="@+id/tvNombreSupervisor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin asignar"
+                            android:textSize="16sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <!-- Separador -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/C2_Gris"
+                        android:layout_marginBottom="3dp"/>
+
+                    <!-- Técnico: Fecha de Asignación -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="3dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_calendario"
+                            app:tint="@color/C3_Ocre"
+                            android:contentDescription="icono calendario"
+                            android:layout_marginEnd="3dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Fecha de Asignación:"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="5dp"/>
+                        <TextView
+                            android:id="@+id/tvFechaAsignacionTecnico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No asignado"
+                            android:textSize="16sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <!-- Técnico: Nombre -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="3dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Técnico:"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="5dp"/>
+                        <TextView
+                            android:id="@+id/tvNombreTecnico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No asignado"
+                            android:textSize="16sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/C2_Gris"
+                        android:layout_marginBottom="3dp"/>
+
+                    <!-- Fecha de Atención -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="3dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_calendario"
+                            app:tint="@color/C3_Ocre"
+                            android:contentDescription="icono calendario"
+                            android:layout_marginEnd="3dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Fecha de Atención:"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="5dp"/>
+                        <TextView
+                            android:id="@+id/tvFechaAtencion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No atendido"
+                            android:textSize="16sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <!-- Observaciones -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Observaciones:"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="5dp"/>
+                        <TextView
+                            android:id="@+id/tvObservaciones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sin observaciones"
+                            android:textSize="16sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="icono_herramientas"
+                    android:layout_marginEnd="8dp"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Botón atrás -->
+    <ImageButton
+        android:id="@+id/BackImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Regresar"
+        android:src="@drawable/ic_arrow_circle_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
