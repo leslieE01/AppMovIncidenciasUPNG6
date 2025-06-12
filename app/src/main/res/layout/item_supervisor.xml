@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dp"
+    android:padding="10dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <!-- Nombre -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_user"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView android:id="@+id/tvNombreSupervisor"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:text="Nombre del supervisor"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Correo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_email"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView android:id="@+id/tvCorreoSupervisor"
+                android:textSize="16dp"
+                android:padding="8dp"
+                android:text="correo@upn.pe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Teléfono -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_call"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView android:id="@+id/tvTelefonoSupervisor"
+                android:textSize="16dp"
+                android:text="999111222"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAsignar"
+            android:text="ASIGNAR"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/C1_Amarilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
