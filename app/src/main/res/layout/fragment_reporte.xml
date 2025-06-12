@@ -1,383 +1,426 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="25dp"
-    android:background="#f6f6f6"
-    android:fontFamily="sans-serif-black">
-
-    <LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:padding="20dp"
+        android:fontFamily="sans-serif-black">
 
-        <!-- Título-->
-        <TextView
-            android:id="@+id/welcomeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Hacer un reporte"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- Datos del usuario (obtenidos de usuario logueado)-->
-
-        <!-- Nombre de usuario -->
-
+        <!-- Usuario-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:padding="5dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Usuario:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                android:contentDescription="icono_herramientas"
+                android:layout_marginEnd="8dp"/>
 
-            <TextView
-                android:id="@+id/tvNombreUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Nombre del usuario"
-                android:textColor="#494949"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Correo -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Correo:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvCorreoUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="correo@ejemplo.com"
-                android:textColor="#494949"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Teléfono -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Teléfono:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvTelefonoUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="999999999"
-                android:textColor="#494949"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-
-        <!-- Selector de categoría -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Categoría:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <FrameLayout
-                android:layout_width="200dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/report_roundedlg_edittext">
-
-                <Spinner
-                    android:id="@+id/spinnerCategoria"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="40dp"
-                    android:textColor="#494949"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/down"
-                    app:tint="#03A9F4" />
-
-            </FrameLayout>
-
-
-        </LinearLayout>
-
-
-        <!-- Selector de subcategoría -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="8dp"
-                android:text="Problema:"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <FrameLayout
-                android:layout_width="203dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/report_roundedlg_edittext">
-
-
-                <Spinner
-                    android:id="@+id/spinnerSubcategoria"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="40dp"
-                    android:textColor="#494949"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/down"
-                    app:tint="#03A9F4" />
-
-            </FrameLayout>
-        </LinearLayout>
-
-
-        <!-- Campo descripción -->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-black"
-            android:gravity="start"
-            android:padding="8dp"
-            android:text="Descripción:"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:background="@drawable/des_report_roundedlg_et"
-            android:gravity="top|center"
-            android:hint="Opcional, obligatoria si eliges Otros"
-            android:inputType="textMultiLine"
-            android:minLines="3"
-            android:textColor="#494949"
-            android:textColorHint="#dd99d6"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-
-        <!-- Ubicación -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:padding="8dp"
-            android:text="Ubicación:"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <!-- Selector de prioridad -->
-        <EditText
-            android:id="@+id/etUbicacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/des_report_roundedlg_et"
-            android:hint="Ej: Edificio C, piso 2"
-            android:padding="12dp"
-            android:textColor="#494949"
-            android:textColorHint="#dd99d6"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Prioridad: "
-                android:textAllCaps="true"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <FrameLayout
+            <!-- Espaciador para empujar el siguiente ImageView a la derecha -->
+            <View
                 android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:background="@drawable/report_roundedlg_edittext">
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-                <!-- Spinner con fondo transparente para que no cubra la flecha -->
-                <Spinner
-                    android:id="@+id/spinnerPrioridad"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="40dp"
-                    android:textSize="18sp" />
+            <ImageButton
+                android:id="@+id/btnMisIncidencias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/account_2"
+                android:background="@null"
+                android:contentDescription="Mis Incidencias" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/down"
-                    app:tint="#03A9F4" />
-
-            </FrameLayout>
+            <ImageButton
+                android:id="@+id/settingsImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="cerrar_sesion" />
 
         </LinearLayout>
 
-
-        <!-- Descripción de la prioridad -->
-        <TextView
-            android:id="@+id/tvDescripcionPrioridad"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/des_report_roundedlg_et"
-            android:padding="10dp"
-            android:text="Descripción de la prioridad"
-            android:textColor="#494949"
-            android:textColorHint="#dd99d6"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:layout_height="1.5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginHorizontal="8dp"/>
 
-        <!-- Subir imagen -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="105dp"
-            android:layout_height="105dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="#a32fff">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:id="@+id/btnSeleccionarImagen"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawableTop="@drawable/ic_photo_camera"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            <!-- Título-->
+            <TextView
+                android:id="@+id/welcomeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Hacer un reporte"
+                android:textAlignment="center"
+                android:textColor="@color/C3_Ocre"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                android:padding="12dp"
-                android:text="Adjuntar Foto"
-                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Datos del usuario (obtenidos de usuario logueado)-->
+
+            <!-- Nombre de usuario -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_user"
+                    android:contentDescription="icono_herramientas"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvNombreUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Nombre del usuario"
+                    android:textColor="#494949"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Correo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_email"
+                    android:contentDescription="icono_herramientas"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvCorreoUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="correo@ejemplo.com"
+                    android:textColor="#494949"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Teléfono -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_call"
+                    android:contentDescription="icono_herramientas"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvTelefonoUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="999999999"
+                    android:textColor="#494949"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <!-- Selector de categoría -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="8dp"
+                    android:text="Categoría:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/report_roundedlg_edittext">
+
+                    <Spinner
+                        android:id="@+id/spinnerCategoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="40dp"
+                        android:textColor="#494949"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:popupBackground="@color/C4_Hueso" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/down"
+                        />
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+            <!-- Selector de subcategoría -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="8dp"
+                    android:text="Problema:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:layout_width="203dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/report_roundedlg_edittext">
+
+
+                    <Spinner
+                        android:id="@+id/spinnerSubcategoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="40dp"
+                        android:textColor="#494949"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:popupBackground="@color/C4_Hueso" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/down"
+                      />
+
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <!-- Campo descripción -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="start"
+                android:padding="8dp"
+                android:text="Descripción:"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/des_report_roundedlg_et"
+                android:gravity="top|center"
+                android:hint="Opcional, obligatoria si eliges Otros"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:textColor="#494949"
+                android:textColorHint="@color/C3_Ocre"
                 android:textSize="18dp"
-                android:background="@android:color/transparent"/>
-        </androidx.cardview.widget.CardView>
+                />
 
 
-        <!-- Botón para enviar -->
-        <Button
-            android:id="@+id/btnEnviarIncidencia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="60dp"
-            android:backgroundTint="#fcb932"
-            android:padding="12dp"
-            android:text="Enviar Reporte"
-            android:textColor="@android:color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <!-- Ubicación -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:text="Ubicación:"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
-</ScrollView>
+            <!-- Selector de prioridad -->
+            <EditText
+                android:id="@+id/etUbicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/des_report_roundedlg_et"
+                android:hint="Ej: Edificio C, piso 2"
+                android:padding="12dp"
+                android:textColor="#494949"
+                android:textColorHint="@color/C3_Ocre"
+                android:textSize="18dp"
+              />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Prioridad: "
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/report_roundedlg_edittext">
+
+                    <!-- Spinner con fondo transparente para que no cubra la flecha -->
+                    <Spinner
+                        android:id="@+id/spinnerPrioridad"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="40dp"
+                        android:textSize="18sp"
+                        android:popupBackground="@color/C4_Hueso" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/down"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <!-- Descripción de la prioridad -->
+
+            <!-- Subir imagen -->
+            <TextView
+                android:id="@+id/tvDescripcionPrioridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/des_report_roundedlg_et"
+                android:padding="10dp"
+                android:text="Descripción de la prioridad"
+                android:textColor="#494949"
+                android:textColorHint="@color/C3_Ocre"
+                android:textSize="18dp"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/white">
+
+                <Button
+                    android:id="@+id/btnSeleccionarImagen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/ic_photo_camera"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:text="Adjuntar Foto"
+                    android:textColor="@color/C3_Ocre"
+                    android:textSize="18dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Botón para enviar -->
+            <Button
+                android:id="@+id/btnEnviarIncidencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="100dp"
+                android:backgroundTint="#fcb932"
+                android:padding="12dp"
+                android:text="Enviar"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            </LinearLayout>
+        </ScrollView>
+
+</LinearLayout>
